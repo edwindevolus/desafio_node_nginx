@@ -29,6 +29,9 @@ services:
             context: ./node
         ports:
             - "3000:3000"
+        volumes:
+            - ./node:/usr/src/app
+        tty: true
         depends_on:
             database:
                 condition: service_healthy
